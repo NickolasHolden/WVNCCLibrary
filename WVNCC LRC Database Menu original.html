@@ -1,0 +1,595 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+		<style type="text/css">
+			/* unvisited link */
+			a:link {
+				color: #0078ff;
+			}  
+			#botlink:visited {
+				color: #0078ff;
+			}
+			#box1 {
+				width: 47%;
+				float: left; 
+				margin-left: 20px;
+				margin-top: 20px;
+				display: block;
+				overflow: visible;
+				background-color: #F2F1F1;
+				border: 1px solid #c8c8c8;
+				height: 400px;
+			}
+			#box1 li {
+				height: 125px;
+			}
+			ul {
+				list-style-type: none; 
+				margin: 10px; 
+				padding: 0; 
+				width: 97%; 
+				background-color: #eeeee
+			}
+			li {
+				float: left;
+				width: 49%;
+				height: 140px;
+			}
+			li a {
+				display: block; 
+				color: #99000; 
+				padding: 8px 8px 16px; 
+				text-decoration: none;
+				margin-left: 10px;
+				height: 50px;
+			} 
+			li p {
+				text-align: center;
+				margin-top: 0;
+				color: black;
+			}
+			/* Change the link color on hover */
+			a:hover {
+				color: #20f; 
+				background-color: #fde767;
+			}
+			.tooltip, .tooltiptext {
+				visibility: hidden; 
+				width: 120px;
+				background-color: black;
+				color: #fff; 
+				text-align: center;
+				border-radius: 6px; 
+				padding: 5px 0; 
+				/*Position the tooltip */ 
+				position: absolute; 
+				z-index: 1;
+			}
+		</style>
+		<title>WVNCC LRC Database Menu</title>
+	</head>
+	<body>
+		<nav>
+			<div id="banner">
+				<div id="header" style="color:white">
+					<div id="header_logo">
+						<a href="http://www.wvncc.edu/">
+							<img alt="West Virginia Northern Community College" src="http://www.wvncc.edu/images/common/wvncc_logo.jpg" />
+						</a>
+					</div>
+					<div id="library_img">
+						<img alt="West Virginia Northern Community College" src="https://fsportal.wvncc.edu/images/lib1.jpg" />
+					</div>
+					<h1 style="font-family:arial rounded mt bold">WVNCC Library Portal Page</h1>
+					<h3 style="font-family:arial narrow">The links below connect you to the databases when off campus</h3>
+					<a class="tooltip" href="http://www.wvncc.edu/">
+						<font lucida="" grande",="" verdana,="" geneva"="" size="3" face=""></font>
+					</a>
+				</div>
+				<div id="titlebar">
+					<a href="https://wvncc.on.worldcat.org/discovery">Library, Books, and More @ Northern</a>
+				</div>
+				<a class="tooltip" href="http://www.wvncc.edu/">
+					<font lucida="" grande",="" verdana,="" geneva"="" size="3" face="">
+						<br />
+						<link rel="stylesheet" type="text/css" href="style.css" />
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+						<script>
+							jQuery(document).ready(function() { 
+								 jQuery('.tabs .tab-links a').on('click', function(e)  { 
+									 var currentAttrValue = jQuery(this).attr('href'); 
+							   
+									 // Show/Hide Tabs 
+									 jQuery('.tabs ' + currentAttrValue).show().siblings().hide(); 
+							   
+							   console.log('.tabs' + currentAttrValue);
+									 // Change/remove current tab to active 
+									 //jQuery(this).closest('h2').addClass('active').siblings().removeClass('active'); 
+									$('.tabs .tab-links a.selected').removeClass('selected'); 
+									 $(this).addClass('selected'); 
+							   
+									 e.preventDefault(); 
+								 }); 
+							 }); 
+						</script>
+						<script>
+							$('.windowForm').submit(function(e){ 
+								// specify a unique target name 
+								var target = 'windowFormTarget'; 
+							  
+								// open a new window and name it 
+								window.open('', target, 'width=500,height=300'); 
+							  
+								// set the target of the form to be 
+								// the window name 
+								this.setAttribute('target', target); 
+							  
+								// allow the form to be submitted normally 
+							}); 
+						</script>
+					</font>
+				</a>
+			</div>
+			<font lucida="" grande",="" verdana,="" geneva"="" size="3" face="">
+				<div id="search-wrapper">
+					<a class="tooltip" href="http://www.wvncc.edu/"></a>
+					<div class="tabs">
+						<div class="tab-links">
+							<a class="selected" href="#tab1">
+								<h2 class="tab-label">
+									<span class="tab-label">
+										<br />Everything<br />
+									</span>
+								</h2>
+							</a>
+							<a href="#tab2">
+								<h2 class="selected">
+									<span class="tab-label">
+										<br />Books<br />
+									</span>
+								</h2>
+							</a>
+							<a href="#tab3">
+								<h2 class="selected">
+									<span class="tab-label">
+										<br />Articles<br />
+									</span>
+								</h2>
+							</a>
+							<a href="#tab4">
+								<h2 class="selected">
+									<span class="tab-label">
+										<br />Video<br />
+									</span>
+								</h2>
+							</a>
+						</div>
+						<div class="tab-content">
+							<div id="tab1" class="tab active">
+								<form action="https://wvncc.on.worldcat.org/search?" target="_blank"> 
+									<div id="search"> 
+										<div class="search-title">
+											<h3>
+												Search<span id="search-name"> Everything</span>
+											</h3>
+										</div>
+										<div class="searchTerm"> 
+										    <input id="realquery" placeholder="Find books, videos, music, and more...." autofocus="autofocus" class="searchbox" name="queryString"> 
+										</div> 
+									    <div class="dropdown-menu"> 
+											<select name="scope" id="searchLibrary" class="dropdown-menu"> 
+												<option name="scope" value="wz:8920" selected="selected">WVNCC Library</option> 
+												<option name="scope" value="">Libraries Worldwide</option> 
+											</select> 
+									    </div> 
+										<input class="headersubmit" value="Search" title="Search" color="#990000" type="submit"> 
+										<a id="advanced-search" title="Advanced Search" href="https://wvncc.on.worldcat.org/advancedsearch" target="_blank">Advanced Search</a> 
+									</div> 
+								</form> 
+							</div>
+							<div id="tab2" class="tab">
+								<form action="https://wvncc.on.worldcat.org/search?" target="_blank"> 
+									<div id="search"> 
+										<div class="search-title">
+											<h3>Find<span id="search-name"> Books</span></h3>         
+										</div>              
+										<div class="searchTerm"> 
+											<input id="realquery" placeholder="Find books...." autofocus="autofocus" class="searchbox" name="queryString"> 
+											<input name="format" value="Book" type="hidden"> 
+											<input name="subformat" value="Book::book_printbook" type="hidden"> 
+											<input name="subformat" value="Book::book_digital" type="hidden"> 
+											<input name="subformat" value="Book::book_thsis" type="hidden"> 
+											<input name="subformat" value="Book::book_mic" type="hidden"> 
+											<input name="subformat" value="Book::book_largeprint" type="hidden"> 
+											<input name="subformat" value="Book::book_braille" type="hidden"> 
+											<input name="subformat" value="Book::book_continuing" type="hidden"> 
+										</div> 
+										<div class="dropdown-menu"> 
+											<select name="scope" id="searchLibrary" class="dropdown-menu"> 
+												<option name="scope" value="wz:8920" selected="selected">WVNCC Library</option> 
+												<option name="scope" value="">Libraries WorldWide</option> 
+											</select> 
+										</div> 
+										<input class="headersubmit" value="Search" title="Search" color="#990000" type="submit"> 
+										<a id="advanced-search" title="Advanced Search" href="https://wvncc.on.worldcat.org/advancedsearch" target="_blank">Advanced Search</a> 
+									</div> 
+								</form> 
+							</div>
+							<div id="tab3" class="tab">
+								<form action="https://wvncc.on.worldcat.org/search?" target="_blank"> 
+									<div id="search"> 
+										<div class="search-title">
+											<h3>Find <span id="search-name">Articles</span></h3>         
+										</div>              
+										<div class="searchTerm"> 
+											<input id="realquery" placeholder="Find articles...." autofocus="autofocus" class="searchbox" name="queryString"> 
+											<input name="format" value="Artchap" type="hidden"> 
+											<input name="subformat" value="Artchap::artchap_artcl" type="hidden"> 
+										</div> 
+										<div class="dropdown"> 
+											<select name="scope" id="searchLibrary" class="dropdown-menu"> 
+												<option name="scope" value="wz:8920" selected="selected">WVNCC Library</option> 
+												<option name="scope" value="">Libraries WorldWide</option> 
+											</select> 
+										</div> 
+										<input class="headersubmit" value="Search" title="Search" color="#990000" type="submit"> 
+										<a id="advanced-search" title="Advanced Search" href="https://wvncc.on.worldcat.org/advancedsearch" target="_blank">Advanced Search</a>
+									</div> 
+								</form> 
+							</div>
+							<div id="tab4" class="tab">
+								<form action="https://wvncc.on.worldcat.org/search?" target="_blank"> 
+									<div id="search"> 
+										<div class="search-title"> 
+											<h3>Find <span id="search-name">Videos</span></h3>         
+										</div>              
+										<div class="searchTerm"> 
+											<input id="realquery" placeholder="Find videos...." autofocus="autofocus" class="searchbox" name="queryString"> 
+											<input name="format" value="Video" type="hidden"> 
+											<input name="subformat" value="Video::video_dvd" type="hidden"> 
+											<input name="subformat" value="Video::video_vhs" type="hidden"> 
+											<input name="subformat" value="Video::video_film" type="hidden"> 
+											<input name="subformat" value="Video::video_digital" type="hidden"> 
+											<input name="subformat" value="Video::video_bluray" type="hidden"> 
+										</div> 
+										<div class="dropdown"> 
+											<select name="scope" id="searchLibrary" class="dropdown-menu"> 
+												<option name="scope" value="wz:8920" selected="selected">WVNCC Library</option> 
+												<option name="scope" value="">Libraries WorldWide</option> 
+											</select> 
+										</div> 
+										<input class="headersubmit" value="Search" title="Search" color="#990000" type="submit"> 
+										<a id="advanced-search" title="Advanced Search" href="https://wvncc.on.worldcat.org/advancedsearch" target="_blank">Advanced Search</a> 
+									</div> 
+								</form> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</font>
+		</nav>
+		<div id="container">
+			<font lucida="" grande",="" verdana,="" geneva"="" size="3" face="">
+				<div id="aside" style="display:inline-block;">
+					<ul style="list-style-type:none;">
+						<li>
+							<a href="http://www.wvncc.edu/current-students/librarylearning-resource-center/1159" target="_blank">WVNCC Library Home Page
+							<p>To find more information on the Library Resource Center</p></a>
+							
+						</li>
+						<li>
+							<a href="http://www.wvncc.edu/current-students/books-and-videos/1160" target="_blank">Books from other Libraries and Collections</a>
+						</li>
+						<li>
+							<a href="http://www.wvncc.edu/current-students/reference/1162" target="_blank">Reference
+							<p>Encyclopedias, Dictionaries, WV Infodepot, Khan Academy and more</p></a>
+						</li>
+						<li>
+							<a href="http://www.wvncc.edu/current-students/search-engines/1167" target="_blank">Web Search
+							<p>Search Engines and other links</p></a>
+						</li>
+						<li>
+							<a href="http://www.wvncc.edu/current-students/library-information/1168" target="_blank">Library Information
+							<p>New books, Services, Staff, Hours, Policies, and more</p></a>
+						</li>
+						<li>
+							<a href="http://www.wvncc.edu/current-students/general-library-guides/1287" target="_blank">Library Help
+							<p>Library Guides and Research Help</p></a>
+						</li>
+					</ul>
+				</div>
+			</font>
+			<div id="box1">
+				<font lucida="" grande",="" verdana,="" geneva"="" size="3" face="">
+					<ul style="list-style-type:none;">
+						<h3>Databases</h3>
+						<li>
+							<a href="http://databases.mail.wvncc.edu:2048/login?url=http://www.credoreference.com" target="_blank">CREDO Reference hundreds of online reference books</a>
+						</li>
+						<li>
+							<a href="http://databases.mail.wvncc.edu:2048/login?url=http://academic.eb.com" target="_blank">Britannica - Academic</a>
+						</li>
+						<li>
+							<a href="http://databases.mail.wvncc.edu:2048/login?url=http://infotrac.galegroup.com/itweb/wvncc_main" target="_blank">Infotrac Gale Student Resources (Business, Health and Wellness, Literature, and Opposing Viewpoints)</a>
+						</li>
+						<li>
+							<a href="http://databases.mail.wvncc.edu:2048/login?url=http://sks.sirs.com/cgi-bin/hst-portal-display?id=SWV0380-0-5214" target="_blank">SIRS Knowledge Source</a>
+						</li>
+						<li>
+							<a href="http://databases.mail.wvncc.edu:2048/login?url=http://search.ebscohost.com/login.aspx" target="_blank">EBSCOhost</a>
+						</li>
+						<li>
+							<a href="http://databases.mail.wvncc.edu:2048/login?url=http://ovidsp.ovid.com/autologin.html" target="_blank">Ovid Nursing</a>
+						</li>
+						<br><br>
+					</ul>
+				</font>
+			</div>
+			<div id="footer" style="color:white">
+				<p>If you are a library user who is having problems accessing these resources, please contact the LRC at your campus for assistance, or go to
+				<a id="botlink" href="http://www.wvncc.edu/current-students/library-information/1168" target="_blank">Library information</a> for more contact information.</p>
+				<p></p>
+			</div>
+		</div>
+		<style>
+			body {
+				margin: 0;
+				margin-top: -20px;
+			}
+			/* Displays banner in IE, Edge, Chrome, and Opera */
+			#banner {
+				margin-top: 18px;
+			}
+			#header {
+				display: block;
+				background-color: #CE0015;
+				text-align: center;
+				margin: 0;
+				height: 80px;
+			}
+			#header #header_logo {
+				background-color: transparent;
+				float: left;
+				width: 25%;
+				font-size: 0.75em;
+				position: relative;
+				display: inline-block;
+				height: 80px;
+				overflow: hidden;
+			}
+			#header #header_logo a img {
+				width: 215px;
+				max-width: 100%;
+				max-height: 100%;
+				margin: auto;
+				position: absolute;
+				padding-left: 2%;
+				padding-right: 5%;
+				top: 0;
+				left: 0;
+				bottom: 0;
+			}
+			#header #library_img {
+				background-color: transparent;
+				float: right;
+				width: 25%;
+				font-size: 0.75em;
+				position: relative;
+				display: inline-block;
+				height: 80px;
+				overflow: hidden;
+			}
+			#header #library_img img {
+				width: 200px;
+				max-width: 100%;
+				max-height: 100%;
+				margin: auto;
+				position: absolute;
+				padding-left: 5%;
+				padding-right: 2%;
+				top: 0;
+				right: 0;
+				bottom: 0;
+			}
+			#titlebar {
+				background-color: #545454;
+				border-bottom: 1px solid #444444;
+				border-top: 1px solid #444444;
+				color: #FFFFFF;
+				width: 100%;
+				min-height: 27px;
+			}
+			#titlebar a {
+				position: relative;
+				left: 40%;
+				top: 5px;
+				color: white;
+			}
+			#titlebar a:hover {
+				color: #545454;
+				background-color: white;
+			}
+			#container {
+				margin-top: 200px;
+				background-color: #e3e3e3;
+				box-shadow: 0px 2px 4px #CCCCCC inset;
+				border-top: 1px solid #CCCCCC;
+			}
+			#aside {
+				width: 47%;
+				height: 400px;
+				float: right; 
+				margin-right: 20px;
+				margin-top: 20px;
+				display: block;
+				overflow: visible;
+				background-color: #F2F1F1;
+				border: 1px solid #c8c8c8;
+			}
+			#aside a {
+				height: 55px;
+				margin-left: 5px;
+			}
+			#footer {
+				box-shadow: 0px 2px 4px #CCCCCC inset;
+				border-top: 1px solid #CCCCCC;
+				width: 97%;
+				background-color: #e3e3e3;
+				margin: 15px 19px 0 19px;
+				display: inline-block;
+			}
+			#footer p {
+				color: black;
+				margin: 20px 30px;
+			}
+			/*----- Tabs -----*/
+			#search-wrapper {
+				display: block;
+				clear: both;
+				margin: 0 auto;
+				width: 98%;
+			}
+			.tabs {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				display: inline-block;
+				width: 100%;
+				margin: 0px auto 0;
+				padding; 0px auto;
+				text-align: center;
+				height: 92px; top: 0;
+				vertical-align: middle;
+			}
+			/*----- Tab Links -----*/
+			/* Clearfix */
+			.tab-links {
+				border-bottom: 1px solid #CDCDCD;
+				margin-bottom: 30px;
+				overflow: auto;
+			}
+			.tab-links h2 {
+				margin: 0px 5px;
+				list-style: none;
+				display: inline-block;
+				text-decoration: none;
+				color: #000000;
+				font-size: 2.4em;
+			}
+			.tab-links a {
+				padding: 9px 15px;
+				display: inline-block;
+				border-radius: 3px 3px 0px 0px;
+				font-size: 16px;
+				font-weight: 600;
+				transition: all linear 0.15s;
+				text-decoration: none;
+				color: rgb(0, 0, 0);
+			}
+			.tab-label {
+				font-size: 16px;
+				text-decoration: none;
+				margin: 10px 0;
+				color: #000000;
+				font-family: "Source Sans Pro", "Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			}
+			/*----- Content of Tabs -----*/
+			.tab-content {
+				padding: 20px;
+				background-color: #F2F1F1;
+				border: 1px solid #C8C8C8;
+				box-shadow: 0px 2px 4px #CCCCCC;
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+				height: 120px;
+				margin-bottom: 100px;
+			}
+			.tab {
+				display: none;
+			}
+			.tab.active {
+				display: block;
+			}
+			/*----- Search Boxes -----*/
+			#search h3 {
+				font-size: 1.5em;
+				width: 100%;
+				margin: auto;
+				text-align: left;
+				margin-top: -10px;
+				margin-bottom: 5px;
+			}
+			input.searchbox {
+				float: left;
+				padding-top: 0px;
+				display: inline;
+				-webkit-appearance: none;
+				vertical-align: middle;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				height: 30px; 
+				width: 63%;
+				font-size: 1.2rem;
+				margin: 10px auto;
+				border: 2px solid #CE0015;
+				position: static;
+			}
+			input.headersubmit {
+				display: inline;
+				-webkit-appearance: none;
+				vertical-align: middle;
+				height: 32px;
+				width: 100px;
+				margin: 10px auto;
+				margin-top: 8px;
+				background-color: #CE0015;
+				color: #ffffff;
+				font-size: 1.5rem;
+				font-family: 'FontAwesome', sans-serif;
+				cursor: pointer;
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+				border-radius: 0;
+				float: left;
+				position: static;
+			}
+			input.headersubmit:hover {
+				background-color: #2178B5;
+			}
+			select.dropdown-menu {
+				display: inline;
+				vertical-align: middle;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				width: 28%;
+				float: left;
+				padding: 2px;
+				font-size: 14px;
+				border: 2px solid #CE0015;
+				border-radius: 0;
+				height: 30px;
+				margin: 10px auto; 
+				cursor: pointer;
+				font-family: "Source Sans Pro", "Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				position: static;
+			}
+			a#advanced-search {
+				float: right;
+				line-height: 10px;
+				font-weight: bold;
+				color: #CE0015;
+				width: 30%
+				margin-right: 0px;
+				padding: 5px 10px;
+			}
+			a#advanced-search:hover {
+				background-color: #F2F1F1;
+				color: #2178B5;
+			}
+		</style>
+	</body>
+</html>
